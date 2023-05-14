@@ -8,7 +8,7 @@ To download the repository + install reqirements use:
 ```
 github clone https://github.com/B148504/Dissertation_Code.git
 
-cd Dissertation
+cd Dissertation_Code
 
 python3 -m pip install -r dissertation_requirements.txt
 ```
