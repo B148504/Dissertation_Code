@@ -37,7 +37,6 @@ The only required input is the VCF file. If you wish to specify specific contigs
 |-o2 | Chromosome, start, end position of all Indels | No | Bed file | No |
 |-o3 | Indels of lengths 1-100 binned by length | Yes | Textfile | No |
 |-o4 | All Indels binned by length in ranges | Yes | Textfile | No |  
-|-o5 | Every specific Indel length binned | No | Textfile | No |
 
 If no output file is specified with a flag the outputs with Yes in printed to terminal will print outputs to terminal but no outputs will be saved
 
