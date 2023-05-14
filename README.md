@@ -11,7 +11,7 @@ cd Dissertation_Code
 
 python3 -m pip install -r Dissertation_requirements.txt
 ```
-# Dissertation_full_shell_pipeline.py
+# Dissertation_full_shell_pipeline.sh
 This is the full pipeline of the project in a blank form. The whole script was automated so the path names are arbritary. If any R steps were required before a step could be done this is outlined in the script.
 
 # Assembly_information.py
