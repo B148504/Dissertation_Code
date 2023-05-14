@@ -18,7 +18,6 @@ parser.add_argument("-o", "--output", action='store', help="Assembly information
 parser.add_argument("-o2", "--output2", action='store', help="Indel positions", required=False)
 parser.add_argument("-o3", "--output3", action='store', help="Indel 100 dictionary", required=False)
 parser.add_argument("-o4", "--output4", action='store', help="Indel 10,000 dictionary", required=False)
-parser.add_argument("-o5", "--output5", action='store', help="Indel 10,000 dictionary", required=False)
 parser.add_argument("--Use_specific_Contigs", action='store_true', help="Use Specific contigs in -i2 textfile format with each contig on a new line", required=False)
 args = parser.parse_args()
 
@@ -32,7 +31,6 @@ output = args.output
 output2 = args.output2
 output3 = args.output3
 output4 = args.output4
-output5 = args.output5
 
 
 #Reading in the chrom_file and turning it into a table 
@@ -55,7 +53,6 @@ variants = itertools.islice(all_variants, None)
 Assembly_info = dict.fromkeys(['number_of_lines', 'matches', 'mismatches', 'indels'], 0)
 Indel_length_dict_100 = dict.fromkeys([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100], 0)
 Indel_length_dict_10000 = dict.fromkeys([], 0)
-Every_indel_length_dict = dict.fromkeys([], 0)
 
 
 previous = -1
@@ -165,10 +162,7 @@ for line in Indel_length:
         Indel_length_dict_10000[ranges] = 1
     else:
         Indel_length_dict_10000[ranges]+=1
-    if line in Every_indel_length_dict:
-        Every_indel_length_dict[line] += 1
-    else:
-        Every_indel_length_dict[line] = 1
+    
 
 print(Assembly_info)
 print(Indel_length_dict_100)
@@ -209,10 +203,3 @@ for k in Indel_length_dict_10000.keys():
 f.write("}")
 f.close()
 
-#every indel pos dictionary output
-f = open(output5, "w")
-f.write("{\n")
-for k in Every_indel_length_dict.keys():
-    f.write("'{}':'{}'\n".format(k, Every_indel_length_dict[k]))
-f.write("}")
-f.close()
