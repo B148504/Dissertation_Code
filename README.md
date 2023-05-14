@@ -11,6 +11,8 @@ cd Dissertation_Code
 
 python3 -m pip install -r Dissertation_requirements.txt
 ```
+# Dissertation_full_shell_pipeline.py
+This is the full pipeline of the project in a blank form. The whole script was automated so the path names are arbritary. If any R steps were required before a step could be done this is outlined in the script.
 
 # Assembly_information.py
 A script that pulls out number of lines, SNPs, homologous site and Indels for all or a specified list of contigs. Indel positions are recorded in a [Chromosome, Start, End]. Indels of lengths 1-100 are binned for every length. All Indels are also binned by length in ranges 1-100, 101-200 etc. All specific Indel lengths are also recorded. 
