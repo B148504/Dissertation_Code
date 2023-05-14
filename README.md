@@ -6,7 +6,7 @@ Scripts I have written in the process of my dissertation: Characterising indel d
 To download the repository + install reqirements use:
 
 ```
-github clone https://github.com/swift-213/Dissertation.git
+github clone https://github.com/B148504/Dissertation.git
 
 cd Dissertation
 
