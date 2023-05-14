@@ -159,7 +159,7 @@
         chrom_text=path/to/textfile/with/list/of/autosome/names/to/be/analysed 
        
 
-        python3 ${code_path}/Assembly_information.py -i ${vcf_depth_filter_chrom_alt} -i2 ${chrom_text} -o ${Assembly_info} -o2 ${indel_finder} -o3 ${indel_binner_100} -o4 ${indel_binner_10000} 
+        python3 ${code_path}/Assembly_information.py -i ${vcf_depth_filter_chrom_alt} -i2 ${chrom_text} --Use_specific_Contigs -o ${Assembly_info} -o2 ${indel_finder} -o3 ${indel_binner_100} -o4 ${indel_binner_10000} 
 
         #Getting the outputs ready for use in R
         Assembly_info=path/to/assembly/output/
@@ -290,7 +290,7 @@
             indel_binner_10000=path/to/output/
             chrom_text=path/to/textfile/with/list/of/autosome/names/to/be/analysed 
 
-            python3 ${code_path}Assembly_information.py -i ${CDS_include} -i2 ${chrom_text} -o ${Assembly_info} -o2 ${indel_finder} -o3 ${indel_binner_100} -o4 ${Indel_binner_10000}
+            python3 ${code_path}Assembly_information.py -i ${CDS_include} -i2 ${chrom_text} --Use_specific_Contigs -o ${Assembly_info} -o2 ${indel_finder} -o3 ${indel_binner_100} -o4 ${Indel_binner_10000}
 
 
         #Sorting of the outputs for R 
