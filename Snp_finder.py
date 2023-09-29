@@ -72,4 +72,3 @@ Assembly_info_df = pd.DataFrame(Assembly_info, index = [0])
 
 Assembly_info_df.to_csv(args.output, index=False)
 
-
