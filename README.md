@@ -1,19 +1,20 @@
 # Dissertation
-Scripts I have written in the process of my dissertation: Characterising indel diversity in Lepidoptera to infer the evolutionary effects of genetic drift and selection
-
+Scripts I have written in the process my dissertation: Characterising indel diversity in Lepidoptera to infer the evolutionary effects of genetic drift and selection
 
 ## Cloning and Requirements
 To download the repository + install reqirements use:
 
 ```
-git clone https://github.com/B148504/Dissertation_Code.git
+github clone https://github.com/B148504/Dissertation_Code.git
 
 cd Dissertation_Code
 
-python3 -m pip install -r dissertation_requirements.txt
+python3 -m pip install -r Dissertation_requirements.txt
 ```
+# Dissertation_full_shell_pipeline.sh
+This is the full pipeline of the project in a blank form. The whole script was automated so the path names are arbritary. If any R steps were required before a step could be done this is outlined in the script.
 
-# Assembly_info.py
+# Assembly_information.py
 A script that pulls out number of lines, SNPs, homologous site and Indels for all or a specified list of contigs. Indel positions are recorded in a [Chromosome, Start, End]. Indels of lengths 1-100 are binned for every length. All Indels are also binned by length in ranges 1-100, 101-200 etc. All specific Indel lengths are also recorded. 
 
 ### Usage:
@@ -36,7 +37,6 @@ The only required input is the VCF file. If you wish to specify specific contigs
 |-o2 | Chromosome, start, end position of all Indels | No | Bed file | No |
 |-o3 | Indels of lengths 1-100 binned by length | Yes | Textfile | No |
 |-o4 | All Indels binned by length in ranges | Yes | Textfile | No |  
-|-o5 | Every specific Indel length binned | No | Textfile | No |
 
 If no output file is specified with a flag the outputs with Yes in printed to terminal will print outputs to terminal but no outputs will be saved
 
@@ -58,6 +58,25 @@ python3 exon_R_indel_sorter.py -inputs -outputs
 |-|-|-|-|-|
 |-o | Indels of lengths 1-100 binned by length  | Yes | Textfile | No |
 |-o2 | All Indels binned by length in ranges | Yes | Textfile | No |  
+
+If no output file is specified with a flag the outputs with Yes in printed to terminal will print outputs to terminal but no outputs will be saved
+# Repeat_finder.py
+A script that finds masked repetitive regions in fasta files
+
+### Usage:
+```
+python3 Repeat_finder.py -inputs -outputs 
+```
+### Inputs
+| Flag | Input | Required | 
+|-|-|-|
+|-i| reference fasta file| Yes |
+|-i2|Textfile specifying which contigs to use| No |
+
+### Outputs
+| Flag | Output | Printed to terminal | Output type | Required | 
+|-|-|-|-|-|
+|-o | Chromosome, start and end position of masked repeat | No | Textfile | No |
 
 If no output file is specified with a flag the outputs with Yes in printed to terminal will print outputs to terminal but no outputs will be saved
 
