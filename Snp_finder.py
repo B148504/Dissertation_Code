@@ -30,12 +30,12 @@ output = args.output
 
 #Reading in the chrom_file and turning it into a table 
 if args.input2 and args.Use_specific_Contigs:
-chrom=[]
-with open(chrom_file) as w:
-    for line in w:
-        string_chrom, numerical_chrom = line.strip().split('\t')
-        if str(numerical_chrom).isdigit() == True:
-            chrom.append(string_chrom)
+    chrom=[]
+    with open(chrom_file) as w:
+        for line in w:
+            string_chrom, numerical_chrom = line.strip().split('\t')
+            if str(numerical_chrom).isdigit() == True:
+                chrom.append(string_chrom)
 
 #Set up parameters and dictionary for loop
 Assembly_info = dict.fromkeys(['number_of_lines', 'matches', 'mismatches'], 0)
